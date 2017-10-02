@@ -12,31 +12,43 @@ tapper.addEventListener('click', function( evt ) {
 
 
     var scale = {
-        'c': 261,
-        'd': 293.665,
-        'e': 329.628,
-        'g': 392,
+        'c2': 523.251,
         'a': 440,
-        'c2': 523.251
+        'g': 392,
+        'e': 329.628,
+        'd': 293.665,
+        'c': 261
     }
 
     var keySize = window.innerHeight / 6;
 
+    console.log("window height");
+    console.log(window.innerHeight);
+    console.log("this click:");
+    console.log(evt.clientY)
 
-    if (evt.screenY < keySize ) {
+    if (evt.clientY < keySize ) {
         osc.frequency.value = scale.c2;
-    } else if (evt.screenY > keySize && evt.screenY < keySize * 2) {
+    } else if (evt.clientY > keySize && evt.clientY < keySize * 2) {
         osc.frequency.value = scale.a;
-    } else if (evt.screenY > keySize * 2 && evt.screenY < keySize * 3) {
+
+    } else if (evt.clientY > keySize * 2 && evt.clientY < keySize * 3) {
         osc.frequency.value = scale.g;
-    } else if (evt.screenY > keySize * 3 && evt.screenY < keySize * 4) {
+
+    } else if (evt.clientY > keySize * 3 && evt.clientY < keySize * 4) {
         osc.frequency.value = scale.e;
-    } else if (evt.screenY > keySize * 4 && evt.screenY < keySize * 5) {
+
+    } else if (evt.clientY > keySize * 4 && evt.clientY < keySize * 5) {
         osc.frequency.value = scale.d;
-    } else {
+
+    } else if (evt.clientY > keySize * 5) {
         osc.frequency.value = scale.c;
 
     }
+
+    console.log(osc.frequency.value);
+
+
     gainNode = ctx.createGain();
     gainNode.gain.value = 0;
 
