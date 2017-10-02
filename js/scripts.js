@@ -15,23 +15,26 @@ tapper.addEventListener('click', function( evt ) {
         'c': 261,
         'd': 293.665,
         'e': 329.628,
+        'g': 392,
         'a': 440,
         'c2': 523.251
     }
 
-    var keySize = window.innerHeight / 5;
+    var keySize = window.innerHeight / 6;
 
 
     if (evt.screenY < keySize ) {
-        osc.frequency.value = scale.c;
-    } else if (evt.screenY > keySize && evt.screenY < keySize * 2) {
-        osc.frequency.value = scale.d;
-    } else if (evt.screenY > keySize * 2 && evt.screenY < keySize * 3) {
-        osc.frequency.value = scale.e;
-    } else if (evt.screenY > keySize * 3 && evt.screenY < keySize * 4) {
-        osc.frequency.value = scale.a;
-    } else {
         osc.frequency.value = scale.c2;
+    } else if (evt.screenY > keySize && evt.screenY < keySize * 2) {
+        osc.frequency.value = scale.a;
+    } else if (evt.screenY > keySize * 2 && evt.screenY < keySize * 3) {
+        osc.frequency.value = scale.g;
+    } else if (evt.screenY > keySize * 3 && evt.screenY < keySize * 4) {
+        osc.frequency.value = scale.e;
+    } else if (evt.screenY > keySize * 4 && evt.screenY < keySize * 5) {
+        osc.frequency.value = scale.d;
+    } else {
+        osc.frequency.value = scale.c;
 
     }
     gainNode = ctx.createGain();
