@@ -1,7 +1,82 @@
-#strike {
-    width: 100%;
+.container {
+    background-color: black;
+}
+body {
+    margin: 0;
+    background-color:black;
+}
+
+html {
     height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+}
+
+@media(orientation:portrait) {
+    .knobs{
+        display:grid;
+        grid-template-columns:repeat(3,auto);
+        justify-content:space-around;
+        grid-row-gap: 2vw;
+        padding-bottom: 3vh;
+    }
+
+    .knob {
+        width: 30vw;
+        height: 30vw;
+        background-color: orangeRed;
+        -moz-border-radius: 30vw;
+        -webkit-border-radius: 30vw;
+        border-radius: 30vw;
+
+    }
+
+    #strike {
+        display:grid;
+        grid-template-columns: repeat(1, auto);
+        justify-content:space-around;
+    }
+
+
+    .pad {
+        flex: auto;
+        overflow-y: scroll;
+        height: 60vh;
+        width: 80vw;
+        background-color: blue;
+    }
+}
+
+@media(orientation:landscape) {
+    .knobs{
+        display:grid;
+        grid-template-columns:repeat(6,auto);
+        justify-content:space-around;
+        grid-row-gap: 2vw;
+        padding-bottom: 3vh;
+    }
+
+    .knob {
+        width: 15vw;
+        height: 15vw;
+        background: orangeRed;
+        -moz-border-radius: 15vw;
+        -webkit-border-radius: 15vw;
+        border-radius: 15vw;
+
+    }
+
+    #strike {
+        display:grid;
+        grid-template-columns: repeat(1, auto);
+        justify-content:space-around;
+        height: overflow;
+    }
+
+
+    .pad {
+        height: 60vh;
+        width: 90vw;
+        background-color: blue;
+
+    }
+
 }

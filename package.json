@@ -1,0 +1,27 @@
+{
+  "name": "gregdrum",
+  "version": "1.0.0",
+  "description": "An attempt to write an expressive musical instrument for mobile devices using the web audio api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/reload/bin/reload -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmschroeder/gregdrum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmschroeder/gregdrum/issues"
+  },
+  "homepage": "https://github.com/gmschroeder/gregdrum#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "reload": "^2.2.2"
+  },
+  "dependencies": {}
+}
